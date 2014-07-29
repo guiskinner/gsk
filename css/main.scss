@@ -1,0 +1,414 @@
+//Imports
+
+@import "_utils.scss";
+@import "_typography.scss";
+
+body{
+	padding:0;
+	margin:0;
+	width:100%;
+}
+
+.hero{
+	height:100vh - 1;
+	@include tablet{
+		min-height:37.5rem;
+	}
+	background-image:url("../images/hero.jpg");
+	background-position:top center;
+	background-size:cover;
+
+	@include flexbox;
+
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: space-between;
+	align-items:center;
+
+	-webkit-flex-direction: column;
+	-webkit-justify-content: space-between;
+	-webkit-align-content: space-between;
+	-webkit-align-items: center;
+
+	text-align:center;
+
+	.logo{
+		@include order(1);
+		@include flex(0 1 auto);
+		top:0;
+		min-width: 12rem;
+		max-width: 16rem;
+		width: 30vw;
+		height: auto;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	.introText{
+		@include order(2);
+		@include flex(0 1 auto);
+		color:white;
+
+		h4{
+			margin-top:0;
+		}
+	}
+
+	.menu{
+		@include order(3);
+		@include flex(0 1 auto);
+		color: white;
+		width: 100%;
+		background-color:rgba(0,0,0,.3);
+
+		a{
+			color: white;
+			text-decoration: none;
+			outline: none;
+		}
+
+		ul{
+			@extend .medium;
+			@include flexbox;
+
+			flex-direction: row;
+			justify-content: space-around;
+			-webkit-flex-direction: row;
+			-webkit-justify-content: space-around;
+
+			li{
+				@include flex(1 1 auto);
+				@include flexbox;
+
+				align-items:center;
+				justify-content: space-around;
+				-webkit-align-items: center;
+				-webkit-justify-content: space-around;
+
+				a{
+					@include flex(1 1 auto);
+					@include flexbox;
+
+					align-items:center;
+					justify-content: space-around;
+					-webkit-align-items: center;
+					-webkit-justify-content: space-around;
+
+					font-size:2rem;
+					height:10rem;
+
+					@include tablet{
+						font-size:1.125rem;
+						height: 6rem;
+					}
+
+					transition: background-color 0.5s ease;
+
+					&:hover{
+						background-color:rgba(0,0,0,.2);
+					}
+				}
+
+				@include tablet{
+
+					&:nth-child(1){
+						:before{
+							font-family: $fontIcon;
+							font-size: 1.5rem;
+							color:white;
+							content: "a";
+							margin: 2.2rem 0 0 -2.5rem;
+							position: absolute;
+						}
+					}
+					&:nth-child(2){
+						:before{
+							font-family: $fontIcon;
+							font-size: 1.5rem;
+							color:white;
+							content: "b";
+							margin: 2.2rem 0 0 -2.5rem;
+							position: absolute;
+						}
+					}
+					&:nth-child(3){
+						:before{
+							font-family: $fontIcon;
+							font-size: 1.5rem;
+							color:white;
+							content: "c";
+							margin: 2.3rem 0 0 -2.5rem;
+							position: absolute;
+						}
+					}
+
+				}
+
+			}
+		}
+	}
+
+	
+}
+
+.coloredBars{
+		@include coloredBars;
+		height: 1vh;
+}
+
+section{
+
+	@include flexbox;
+	flex-direction: column;
+	justify-content: space-around;
+	-webkit-flex-direction: column;
+	-webkit-justify-content: space-around;
+
+	header{
+		background-color:white;
+		text-align: center;
+		padding:2rem 0 3.5rem 0;
+
+		p{
+			@extend .large;	
+		}
+	}
+
+
+	&.portfolio{
+		h2{
+
+			@include flex(1 1 auto);
+
+			color:$pinkGsk;
+			
+			&:before{
+				font-family: $fontIcon;
+				font-size: 4.25rem;
+				color:$pinkGsk;
+				content: "a";
+
+				@include flexbox;
+				justify-content: center;
+				-webkit-justify-content: center;	
+
+			}
+		}
+
+		section{
+			background-color:$pinkGsk;
+			padding:2rem;
+			@include flexbox;
+
+			flex-direction: column;
+			justify-content: space-between;
+			-webkit-flex-direction: column;
+			-webkit-justify-content: space-between;
+
+			@include tablet{
+				flex-direction: row;
+				justify-content: space-between;
+				-webkit-flex-direction: row;
+				-webkit-justify-content: space-between;
+				flex-wrap: wrap;
+				-webkit-flex-wrap:wrap;
+			}
+
+			.item{
+				background-color:white;
+				margin-bottom: 2rem;
+
+				transition: transform 100ms ease-in-out;
+
+				&:hover{
+					transform:scale(1.05,1.05);
+				}
+
+				&:last-of-type{
+					margin-bottom: 0;
+				}
+
+				@include tablet{
+					width: 30vw;
+				}
+
+				@include flex (0 1 auto);
+
+				.thumb{
+					background-color:#e5e5e5;
+					height: 9.5rem;
+				}
+
+				.description{
+
+					padding:1rem;
+
+					h3{
+						margin:0;
+						color: $pinkGsk;
+					}
+
+					p{
+
+					}
+				}
+			}
+		}
+
+	}
+
+	&.curriculum{
+		h2{
+
+			@include flex(1 1 auto);
+
+			color:$blueGsk;
+			
+			&:before{
+				font-family: $fontIcon;
+				font-size: 4.25rem;
+				color:$blueGsk;
+				content: "b";
+
+				@include flexbox;
+				justify-content: center;
+				-webkit-justify-content: center;	
+
+			}
+		}
+
+		section{
+			background-color:$blueGsk;
+			padding:2rem;
+			@include flexbox;
+
+			flex-direction: column;
+			justify-content: space-between;
+			-webkit-flex-direction: column;
+			-webkit-justify-content: space-between;
+
+			@include tablet{
+				flex-direction: row;
+				justify-content: space-between;
+				-webkit-flex-direction: row;
+				-webkit-justify-content: space-between;
+				flex-wrap: wrap;
+				-webkit-flex-wrap:wrap;
+			}
+
+			.item{
+				background-color:white;
+				margin-bottom: 2rem;
+
+				&:last-of-type{
+					margin-bottom: 0;
+				}
+
+				@include tablet{
+					width: 29vw;
+				}
+
+				@include flex (0 1 auto);
+
+				.thumb{
+					background-color:#e5e5e5;
+					height: 9.5rem;
+				}
+
+				.description{
+
+					padding:1rem;
+
+					h3{
+						margin:0;
+						color: $blueGsk;
+					}
+
+					p{
+
+					}
+				}
+			}
+		}
+
+	}
+
+	&.contact{
+		h2{
+
+			@include flex(1 1 auto);
+
+			color:$yellowGsk;
+			
+			&:before{
+				font-family: $fontIcon;
+				font-size: 4.25rem;
+				color:$yellowGsk;
+				content: "c";
+
+				@include flexbox;
+				justify-content: center;
+				-webkit-justify-content: center;	
+
+			}
+		}
+
+		section{
+			background-color:$yellowGsk;
+			padding:2rem;
+			@include flexbox;
+
+			flex-direction: column;
+			justify-content: space-between;
+			-webkit-flex-direction: column;
+			-webkit-justify-content: space-between;
+
+			@include tablet{
+				flex-direction: row;
+				justify-content: space-between;
+				-webkit-flex-direction: row;
+				-webkit-justify-content: space-between;
+				flex-wrap: wrap;
+				-webkit-flex-wrap:wrap;
+			}
+
+			.item{
+				background-color:white;
+				margin-bottom: 2rem;
+
+				&:last-of-type{
+					margin-bottom: 0;
+				}
+
+				@include tablet{
+					width: 29vw; 
+				}
+
+				@include flex (0 1 auto);
+
+				.thumb{
+					background-color:#e5e5e5;
+					height: 9.5rem;
+				}
+
+				.description{
+
+					padding:1rem;
+
+					h3{
+						margin:0;
+						color: $yellowGsk;
+					}
+
+					p{
+
+					}
+				}
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,61 @@
+$baseLineHeight:1.875;
+$leading:$baseLineHeight * 1rem;
+
+*{margin:0; padding:0;}
+
+html{
+
+	$baseFontSize:22 !default;
+
+	font-family:$fontDefault;
+	font-size:$baseFontSize/ 16 * 100%;
+	color:$colorFont;
+	font-weight:300;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+
+	@include tablet{
+		$baseFontSize:16;
+		font-size:$baseFontSize/ 16 * 100%;
+	}
+}
+
+
+
+h1,h2,h3,h4,h5,h6{
+	margin-top:1.875rem;
+	font-weight:300;
+}
+
+p{
+	line-height:$leading;
+	margin-top:0.625rem;
+}
+
+strong{
+	font-weight:600;
+}
+
+h1{
+	font-size:2rem;
+	padding:3.125rem 2.5rem;
+	border-top:1px solid rgba(255,255,255,.5);
+	border-bottom:1px solid rgba(255,255,255,.5);
+}
+h2,.huge{
+	font-size:3rem;
+}
+h3,.large{
+	font-size:1.5rem;
+}
+h4,.medium{
+	font-size:1.125rem;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
