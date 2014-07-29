@@ -53,6 +53,27 @@ body {
   margin: 0;
   width: 100%; }
 
+#floatMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 1rem;
+  width: 100vw;
+  border-bottom: 1px solid #f7f7f7;
+  background-color: rgba(255, 255, 255, 0.5); }
+  #floatMenu ul {
+    display: block;
+    font-size: 0.8rem; }
+    #floatMenu ul li {
+      display: inline;
+      margin-right: 1rem; }
+      #floatMenu ul li:nth-child(3) {
+        margin-right: 1.5rem; }
+      #floatMenu ul li a {
+        text-decoration: none;
+        color: gray; }
+
 .hero {
   height: 99vh;
   background-image: url("../images/hero.jpg");
